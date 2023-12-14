@@ -1,1 +1,29 @@
 dotnet watch --no-hot-reload
+
+## vite
+npm create vite@latest
+    give project name [client] and select typescript
+cd client
+npm install
+npm run dev
+
+# change server
+update: vite.config.ts - Add server port 3000
+ server: {
+    port: 3000
+  }
+
+update: package.json - add start 
+  "scripts": {
+    "start": "vite",
+    }
+
+##Material UI
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+npm install @mui/icons-material
+##Add to App.tsx
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
