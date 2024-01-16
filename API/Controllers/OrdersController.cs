@@ -75,7 +75,8 @@ public class OrdersController : BaseApiController
             BuyerId = User.Identity.Name,
             ShippingAddress = orderDto.ShippingAddress,
             SubTotal = subTotal,
-            DeliveryFee = deliveryFee
+            DeliveryFee = deliveryFee,
+            PaymentIntentId = basket.PaymentIntentId
         };
 
         _context.Orders.Add(order);
