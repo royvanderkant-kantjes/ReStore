@@ -50,3 +50,8 @@ docker run --name dev-restore -e POSTGRES_PASSWORD=secret-dev -e POSTGRES_USER=a
 
 docker build -t dockerroy1971/restore .
 docker run --rm -it -p 8080:80 dockerroy1971/restore
+
+git checkout -b Inventory
+git push -u origin Inventory
+
+npm install --save react-dropzone
