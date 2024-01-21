@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { clearBasket } from "../basket/basketSlice";
 import { LoadingButton } from "@mui/lab";
 import { StripeElementType } from "@stripe/stripe-js";
-import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
+import { useAppSelector } from "../../app/store/configureStore";
 import { CardNumberElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
 const steps = ['Shipping address', 'Review your order', 'Payment details'];

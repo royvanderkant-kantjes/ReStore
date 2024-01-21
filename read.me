@@ -44,3 +44,9 @@ DELETE FROM Baskets;
 DELETE FROM BasketItems;
 
 npm install --save @stripe/react-stripe-js @stripe/stripe-js
+npm install react-slick @types/react-slick slick-carousel
+
+docker run --name dev-restore -e POSTGRES_PASSWORD=secret-dev -e POSTGRES_USER=admin-dev -p 5432:5432 -v restore-dev-postgres-data:/var/lib/postgresql/data -d postgres
+
+docker build -t dockerroy1971/restore .
+docker run --rm -it -p 8080:80 dockerroy1971/restore

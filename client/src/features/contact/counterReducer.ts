@@ -9,5 +9,6 @@ const initialState: CounterState = {
 }
 
 export default function counterReducer (state = initialState, action: any) {
+    console.log(action);
     return state;
 }

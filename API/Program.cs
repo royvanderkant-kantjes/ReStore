@@ -42,8 +42,9 @@ builder.Services.AddSwaggerGen(c=> {
 });
 
 builder.Services.AddDbContext<StoreContext>(opt => {
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
 builder.Services.AddCors();
 builder.Services.AddIdentityCore<User>(opt => {
         opt.User.RequireUniqueEmail = true;
@@ -79,6 +80,9 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseCors(opt => {
     opt.AllowAnyHeader()
     .AllowAnyMethod()
@@ -90,6 +94,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapFallbackToController("Index","Fallback");
+
 
 var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<StoreContext>();

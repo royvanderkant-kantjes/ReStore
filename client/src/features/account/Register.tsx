@@ -1,12 +1,10 @@
-import { LockOutlined, Pattern } from "@mui/icons-material";
-import { Container, Avatar, Typography, Box, TextField, Grid, Paper, Alert, AlertTitle, List, ListItem, ListItemText } from "@mui/material";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { LockOutlined } from "@mui/icons-material";
+import { Container, Avatar, Typography, Box, TextField, Grid, Paper } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import { FieldValues, useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import agent from "../../api/agent";
-import { useState } from "react";
 import { toast } from "react-toastify";
-import { router } from "../../app/router/Routes";
 
 export default function Register() {
     const navigate = useNavigate();
